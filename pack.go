@@ -502,9 +502,9 @@ func packApp(cmd *Command, args []string) int {
 		exitPrint(fmt.Sprintf("App path does not exist: %s", thePath))
 	}
 
-	if isBeegoProject(thePath) == false {
-		exitPrint(fmt.Sprintf("Bee does not support non Beego project"))
-	}
+	//if isBeegoProject(thePath) == false {
+	//	exitPrint(fmt.Sprintf("Bee does not support non Beego project"))
+	//}
 
 	ColorLog("Packaging application: %s\n", thePath)
 

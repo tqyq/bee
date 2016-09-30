@@ -77,7 +77,7 @@ func runApp(cmd *Command, args []string) int {
 			appname = path.Base(currpath)
 			currentGoPath = _gopath
 		} else {
-			exitPrint(fmt.Sprintf("Bee does not support non Beego project: %s", currpath))
+			//exitPrint(fmt.Sprintf("Bee does not support non Beego project: %s", currpath))
 		}
 		ColorLog("[INFO] Using '%s' as 'appname'\n", appname)
 	} else {
@@ -103,13 +103,13 @@ func runApp(cmd *Command, args []string) int {
 
 	Debugf("current path:%s\n", currpath)
 
-	if runmode == "prod" || runmode == "dev"{
+	if runmode == "prod" || runmode == "dev" {
 		os.Setenv("BEEGO_RUNMODE", runmode)
 		ColorLog("[INFO] Using '%s' as 'runmode'\n", os.Getenv("BEEGO_RUNMODE"))
-	}else if runmode != ""{
+	} else if runmode != "" {
 		os.Setenv("BEEGO_RUNMODE", runmode)
 		ColorLog("[WARN] Using '%s' as 'runmode'\n", os.Getenv("BEEGO_RUNMODE"))
-	}else if os.Getenv("BEEGO_RUNMODE") != ""{
+	} else if os.Getenv("BEEGO_RUNMODE") != "" {
 		ColorLog("[WARN] Using '%s' as 'runmode'\n", os.Getenv("BEEGO_RUNMODE"))
 	}
 
