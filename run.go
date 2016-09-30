@@ -72,7 +72,7 @@ func runApp(cmd *Command, args []string) int {
 
 	if len(args) == 0 || args[0] == "watchall" {
 		currpath, _ = os.Getwd()
-
+		appname = path.Base(currpath)
 		if found, _gopath, _ := SearchGOPATHs(currpath); found {
 			appname = path.Base(currpath)
 			currentGoPath = _gopath
